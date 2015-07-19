@@ -1,0 +1,50 @@
+doctype html
+html(lang='en')
+	head
+		meta(charset="UTF-8")
+		title Abhishek Modi's Blog
+		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css")
+		link(rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
+		link(rel="stylesheet" href="/stylesheets/blog.css")
+		link(rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon")
+		link(rel="icon" href="/images/favicon.ico" type="image/x-icon")
+		link(href="/ckeditor/plugins/codesnippet/lib/highlight/styles/default.css" rel="stylesheet")
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
+		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
+		script(src="/ckeditor/ckeditor.js")
+		script(src="/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js")
+
+	body.home.blog
+		header#masthead.site-header(role="banner")
+			nav.navbar.navbar-default(role="navigation")
+				div.container
+					div.row
+						div.site-navigation-inner.col-sm-12
+							div.navbar-header
+								div#logo
+									a.navbar-brand(href="/", title="Abhishek Modi's Blog", rel="home") Abhishek Modi's Blog
+
+							div.collapse.navbar-collapse
+								ul.nav.navbar-nav
+									li
+										a(href="http://www.abmodi.com") My Profile
+									li
+										a(href="http://www.abmodi.com/contact") Contact Me
+
+		div#content.site-content
+			div.top-section
+
+			div.container.main-content-area
+				div.row
+					div.main-content-inner.col-sm-12.col-md-8.pull-left
+						div#primary.content-area
+							div.post-list-view
+							div.post-create-view
+							div.full-post-view
+					
+					div#secondary.widget-area.col-sm-12.col-md-4(role="complimentary")
+						div.well.rhp-container-view
+
+		
+		script(data-main="/js/main", src="/js/lib/require.js")
