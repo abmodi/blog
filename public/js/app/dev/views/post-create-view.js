@@ -21,7 +21,6 @@ define(["backbone", "app/app", "app/templates/post-create-template"],
 			},
 
 			_onCreatePostClick: function() {
-				alert("post created");
 				var title = this.$(".post-title").val(),
 					body = CKEDITOR.instances.editor1.getData(),
 					tags = this.$(".post-tags").val();

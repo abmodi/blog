@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var passport = require('passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -22,9 +23,21 @@ router.get('/posts/:id', function(req, res, next){
 	});
 });
 
+router.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
+
 router.get('/*', function(req, res, next){
 	res.render('blog', {"url": "blog"});
 });
+
+router.post('/login', 
+  passport.authenticate('local', { failureRedirect: '/login' }),
+  function(req, res) {
+    res.send({'success': true});
+  }
+);
 
 router.post('/posts', ensureAuthenticated, function(req, res, next){
 	console.log(req.body);
