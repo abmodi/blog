@@ -10,7 +10,7 @@ define(["backbone", "app/app", "app/models/post-model"], function(Backbone, App)
 			*/
 		}, 
 		model : App.PostModel, 
-		url : "/blog/posts"
+		url : "/posts"
 	});
 
 	return App.PostListCollection;

@@ -31,13 +31,10 @@ var LocalStrategy = require('passport-local').Strategy;
 var MongoClient = require('mongodb').MongoClient;
 
 var url = 'mongodb://localhost:27017/blog';
-//var url = "mongodb://heroku_2z7zlcf0:6ok2mam8kjdgc0ag453004fn4c@ds043981.mongolab.com:43981/heroku_2z7zlcf0";
 
-var routes = require('./routes/index');
 var blog = require('./routes/blog');
 
 var app = express();
-var cool = require('cool-ascii-faces');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -82,14 +79,11 @@ MongoClient.connect(url, function(err, db){
 	app.use(passport.initialize());
 	app.use(passport.session());
 	app.use(function(req, res, next){
-		if(req.headers.host == 'blog.abmodi.com')  //if it's a sub-domain
-    		req.url = '/blog' + req.url;  //append some text yourself
 		req.db = db;
 		next();
 	});
 
-	app.use('/', routes);
-	app.use('/blog', blog);
+	app.use('/', blog);
 
 	// catch 404 and forward to error handler
 	app.use(function(req, res, next) {

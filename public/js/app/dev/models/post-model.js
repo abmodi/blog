@@ -5,7 +5,7 @@ define(["backbone", "app/app"], function(Backbone, App) {
 			Backbone.Model.prototype.initialize.call(this);
 		},
 
-		urlRoot: "/blog/posts",
+		urlRoot: "/posts",
 		
 		idAttribute: '_id',
 

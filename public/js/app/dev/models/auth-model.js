@@ -5,7 +5,7 @@ define(["backbone", "app/app"], function(Backbone, App) {
 			Backbone.Model.prototype.initialize.call(this);
 		},
 
-		url: "/blog/login",
+		url: "/login",
 
 		defaults: {
 			username: "",
